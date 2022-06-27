@@ -1,0 +1,35 @@
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+    
+    
+    tc -(nlogn)
+    sc- (1)
+    
+    
+        Arrays.sort(nums);
+       int i=1;
+        while(i<nums.length)
+        {
+            if(nums[i-1]==nums[i])
+            {
+                return true;
+            }
+            i+=1;
+        }
+        return false;
+         
+         
+         
+         
+         tc-(n)
+         sc-(n) for hashmap 
+         
+        HashMap<Integer,Integer> map=new HashMap<>();
+        for(int i:nums)
+        {
+            if(map.containsKey(i))return true;
+            map.put(i,i);
+        }
+        return false;
+    }
+}
